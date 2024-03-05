@@ -5,7 +5,7 @@ import * as NoKotlinUint from 'no-kotlin-uint';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>{NoKotlinUint.hello()}</Text>
+      <Text>{NoKotlinUint.output()}</Text>
     </View>
   );
 }

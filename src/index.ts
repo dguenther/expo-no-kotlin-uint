@@ -3,24 +3,12 @@ import { NativeModulesProxy, EventEmitter, Subscription } from 'expo-modules-cor
 // Import the native module. On web, it will be resolved to NoKotlinUint.web.ts
 // and on native platforms to NoKotlinUint.ts
 import NoKotlinUintModule from './NoKotlinUintModule';
-import NoKotlinUintView from './NoKotlinUintView';
-import { ChangeEventPayload, NoKotlinUintViewProps } from './NoKotlinUint.types';
 
-// Get the native constant value.
-export const PI = NoKotlinUintModule.PI;
-
-export function hello(): string {
-  return NoKotlinUintModule.hello();
+export function input(name: string): string {
+  return NoKotlinUintModule.input(name);
 }
 
-export async function setValueAsync(value: string) {
-  return await NoKotlinUintModule.setValueAsync(value);
+export function output(): string {
+  return NoKotlinUintModule.output();
 }
 
-const emitter = new EventEmitter(NoKotlinUintModule ?? NativeModulesProxy.NoKotlinUint);
-
-export function addChangeListener(listener: (event: ChangeEventPayload) => void): Subscription {
-  return emitter.addListener<ChangeEventPayload>('onChange', listener);
-}
-
-export { NoKotlinUintView, NoKotlinUintViewProps, ChangeEventPayload };
