@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "no-kotlin-uint": ["../src/index"],
+      "no-kotlin-uint/*": ["../src/*"]
+    }
+  }
+}
